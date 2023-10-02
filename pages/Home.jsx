@@ -30,7 +30,9 @@ const Home = ({}) => {
 
   const createTodo = async () => {
     dispatch(addTodo({ title, description }));
+
   };
+  
 
   //     if (todos.find((item) => item.title === singleTodo.title)) {
   //       alert("duplicated title");
@@ -72,7 +74,7 @@ const Home = ({}) => {
         style={styles.input}
         placeholder="Description"
       />
-      <TouchableOpacity style={styles.button} onPress={addTodo}>
+      <TouchableOpacity style={styles.button} onPress={createTodo}>
         <Text style={{ color: "#fff", fontSize: 20 }}>Save</Text>
       </TouchableOpacity>
       {todos.length !== 0 && (

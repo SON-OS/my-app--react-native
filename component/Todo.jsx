@@ -1,8 +1,10 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, TouchableWithoutFeedback, } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { useDispatch } from "react-redux";
 import { changeTodoStatus, deleteTodo } from "../Redux/slices/Todo.slices"
+import { FontAwesome5 } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 const Todo = ({ todo }) => {
   const navigation = useNavigation();
 
@@ -11,13 +13,13 @@ const Todo = ({ todo }) => {
     <TouchableOpacity
     activeOpacity={0.8}
     style={{
-      width: 300,
+      width: 200,
       minHeight: 50,
       padding: 15,
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "space-between",
-      backgroundColor: "gray",
+      backgroundColor: "cadetblue",
       marginBottom: 10,
       borderRadius: 5,
     }}
@@ -32,13 +34,13 @@ const Todo = ({ todo }) => {
       <TouchableWithoutFeedback
         onPress={() => dispatch(deleteTodo({ id: todo.id }))}
       >
-        <FontAwesome5 name="trash" size={24} color="red" />
+        <FontAwesome5 name="trash" size={15} color="red" />
       </TouchableWithoutFeedback>
 
       <TouchableWithoutFeedback
         onPress={() => dispatch(changeTodoStatus({ id: todo.id }))}
       >
-        <FontAwesome name="check-circle" size={24} color="black" />
+        <FontAwesome name="check-circle" size={15} color="green" />
       </TouchableWithoutFeedback>
     </View>
     </TouchableOpacity>
